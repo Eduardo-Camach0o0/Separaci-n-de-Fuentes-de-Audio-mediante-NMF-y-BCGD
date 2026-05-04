@@ -152,7 +152,10 @@ if __name__ == '__main__':
         print(">>> Para procesar los 426, ejecuta: python batch_nmf_processor.py --full <<<\\n")
         pares = pares[:100]
         
-    nucleos = os.cpu_count()
+    # nucleos = os.cpu_count()
+
+    nucleos = max(1, os.cpu_count() - 2)
+
     print(f"Archivos a procesar : {len(pares)}")
     print(f"Núcleos detectados  : {nucleos}")
     print(f"Motor Paralelo      : ProcessPoolExecutor\\n")
